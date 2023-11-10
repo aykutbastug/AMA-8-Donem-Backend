@@ -88,6 +88,29 @@ namespace _01_VeriTipleriveDegiskenler
             //Console.Write("örnek2");
 
             Console.ReadKey();
+
+
+
+            //ÖRNEK SORU : 
+
+            //Adı Soyadı
+            //TC Kimlik No
+            //Telefon
+            //Email
+            //Yaş (Boş Geçilebilir)
+            //Doğum Tarihi (Boş Geçilebilir)
+            //Evli Mi ?
+
+            string adiSoyadi = "Aykut BAŞTUĞ";
+            ulong tCKimlikNo = 123;
+            //string tcKimlikNo = "51653355665";
+            string telefonNo = "0 543 375 8551";
+            string email = "aykutbastug@gmail.com";
+            ushort? yas = 78;
+            DateTime? dogumTarihi = DateTime.Today;
+            //string dogumTarihi2 = "01.01.2002";
+            bool evliMi = false;
+            //string evliMi1 = "Evet";
         }
 
     }
