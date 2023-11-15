@@ -72,10 +72,13 @@
 
             Console.WriteLine("Devam etmek istiyor musunuz ? (E/H)");
             string degisken1 = Console.ReadLine();
+           
             if (degisken1 == "E" || degisken1 == "e")
                 Console.WriteLine("Evet");
-            else
+            else if (degisken1 == "H" || degisken1 == "h")
                 Console.WriteLine("Hayır");
+            else
+                Console.WriteLine("Hatalı seçim yaptınız");
 
         }
     }
