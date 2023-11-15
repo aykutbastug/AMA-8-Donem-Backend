@@ -101,17 +101,23 @@ namespace _01_VeriTipleriveDegiskenler
             //Doğum Tarihi (Boş Geçilebilir)
             //Evli Mi ?
 
-            string adiSoyadi = "Aykut BAŞTUĞ";
-            ulong tCKimlikNo = 123;
-            //string tcKimlikNo = "51653355665";
-            string telefonNo = "0 543 375 8551";
-            string email = "aykutbastug@gmail.com";
-            ushort? yas = 78;
-            DateTime? dogumTarihi = DateTime.Today;
-            //string dogumTarihi2 = "01.01.2002";
-            bool evliMi = false;
-            //string evliMi1 = "Evet";
-        }
+            string adiSoyadi = "Ceyda";
+            ulong tcKimlikNo = 10433080852;
+            long telephone = 65566823498;
+            string email = "ceydabaskural8@gmail.com";
+            ushort? yas = 20;
+            DateTime? dogumTarihi = null;
+            bool? evliMi = false;
 
+            Console.WriteLine(adiSoyadi);
+            Console.WriteLine(tcKimlikNo);
+            Console.WriteLine(telephone);
+            Console.WriteLine(email);
+            Console.WriteLine(yas);
+            Console.WriteLine(dogumTarihi);
+            Console.WriteLine(evliMi);
+
+
+        }
     }
 }
