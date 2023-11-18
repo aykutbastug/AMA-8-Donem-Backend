@@ -15,13 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05-SwitchCaseKullanimi", "0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06-TryCatchKullanimi", "06-TryCatchKullanimi\06-TryCatchKullanimi.csproj", "{82757D75-88A0-42F1-A3BE-B19D4534D83E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07-ForDongusu", "07-ForDongusu\07-ForDongusu.csproj", "{7A0610BD-2BD8-4246-8883-B2260A4B7946}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07-ForDongusu", "07-ForDongusu\07-ForDongusu.csproj", "{7A0610BD-2BD8-4246-8883-B2260A4B7946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08-WhileDongusu", "08-WhileDongusu\08-WhileDongusu.csproj", "{A79FF1FD-8451-4508-9806-94556A8CEA18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-WhileDongusu", "08-WhileDongusu\08-WhileDongusu.csproj", "{A79FF1FD-8451-4508-9806-94556A8CEA18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09-DoWhileDongusu", "09-DoWhileDongusu\09-DoWhileDongusu.csproj", "{20758F97-3DD2-4ABD-AF1F-9A7C2B2FAD43}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-TipDonusturmeMetotları", "03-TipDonusturmeMetotları\03-TipDonusturmeMetotları.csproj", "{AFFCB13A-FB36-441E-AA2C-D96D9BD2061A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09-DoWhileDongusu", "09-DoWhileDongusu\09-DoWhileDongusu.csproj", "{20758F97-3DD2-4ABD-AF1F-9A7C2B2FAD43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,10 +63,6 @@ Global
 		{20758F97-3DD2-4ABD-AF1F-9A7C2B2FAD43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20758F97-3DD2-4ABD-AF1F-9A7C2B2FAD43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20758F97-3DD2-4ABD-AF1F-9A7C2B2FAD43}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AFFCB13A-FB36-441E-AA2C-D96D9BD2061A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFFCB13A-FB36-441E-AA2C-D96D9BD2061A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AFFCB13A-FB36-441E-AA2C-D96D9BD2061A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AFFCB13A-FB36-441E-AA2C-D96D9BD2061A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
