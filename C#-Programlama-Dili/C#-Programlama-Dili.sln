@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-VeriTipleriveDegiskenler", "01-VeriTipleriveDegiskenler\01-VeriTipleriveDegiskenler.csproj", "{BC022006-E4A0-498E-96D6-DF8193630EE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-AritmetikselOperatorler", "02-AritmetikselOperatorler\02-AritmetikselOperatorler.csproj", "{677BD88D-7B67-486E-8786-31389BA2A764}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-AritmetikselOperatorler", "02-AritmetikselOperatorler\02-AritmetikselOperatorler.csproj", "{677BD88D-7B67-486E-8786-31389BA2A764}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-TipDonusturmeMetotları", "03-TipDonusturmeMetotları\03-TipDonusturmeMetotları.csproj", "{AFFCB13A-FB36-441E-AA2C-D96D9BD2061A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{677BD88D-7B67-486E-8786-31389BA2A764}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{677BD88D-7B67-486E-8786-31389BA2A764}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{677BD88D-7B67-486E-8786-31389BA2A764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFFCB13A-FB36-441E-AA2C-D96D9BD2061A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFFCB13A-FB36-441E-AA2C-D96D9BD2061A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFFCB13A-FB36-441E-AA2C-D96D9BD2061A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFFCB13A-FB36-441E-AA2C-D96D9BD2061A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

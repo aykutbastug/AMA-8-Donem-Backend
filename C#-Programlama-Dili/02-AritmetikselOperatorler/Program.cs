@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 
 namespace _02_AritmetikselOperatorler
 {
@@ -123,60 +124,60 @@ namespace _02_AritmetikselOperatorler
             #endregion
 
 
-            bool evlimi = true;
-            Console.WriteLine("Evli Mi = " + evlimi);
-            Console.WriteLine("Evli Mi = " + !evlimi); /*!--> sadece boolen da tersine çevirme işlemi yapıyor yanı true ise false, false ise true.*/
+            //bool evlimi = true;
+            //Console.WriteLine("Evli Mi = " + evlimi);
+            //Console.WriteLine("Evli Mi = " + !evlimi); /*!--> sadece boolen da tersine çevirme işlemi yapıyor yanı true ise false, false ise true.*/
 
-            //Herhangi bir tuşa basılana dek console ekranı açık kalması için aşağıdaki kod satırı kullanılır
-            Console.ReadKey();
-
-
-            // Ödev1: Bir bakkalın veresiye defterine tutan bir uygulama yaptığımızı hayal edelim. Bu bağlamda lazım olacak olan değişkenleri tipleriyle birlikte yazınız.
-            //  Müşteri Bilgileri = Adı Soyadı, Telefon, Adres, Toplam Borç, Toplam Alacak
-            //  Ürün Bilgileri = Ürün Adı, Ürün Kodu, Birim Fiyatı, Stok Miktarı, Ölçü Birim(Adet, Kg, Gr vs)
-            //  Müşteri Hareketleri = İşlem Tarihi, Ürün Adı, Birim Fiyatı, Miktarı, Tutarı, Kalan Alacak Tutarı
+            ////Herhangi bir tuşa basılana dek console ekranı açık kalması için aşağıdaki kod satırı kullanılır
+            //Console.ReadKey();
 
 
-            string customernamesurname = "ceydabaskural";
-            int phonenumber = 0551121654;
-            string address = "İzmir";
-            decimal totaldebt = 1000m;
-            decimal totalreceive = 1500m;
-
-            string productname;
-            productname = "dress";
-            long productcode = 256487613268;
-            int unitprice;
-            unitprice = 1000;
-            long stockamount = 2000;
-            string unitofmeasurement = "pcs";
+            //// Ödev1: Bir bakkalın veresiye defterine tutan bir uygulama yaptığımızı hayal edelim. Bu bağlamda lazım olacak olan değişkenleri tipleriyle birlikte yazınız.
+            ////  Müşteri Bilgileri = Adı Soyadı, Telefon, Adres, Toplam Borç, Toplam Alacak
+            ////  Ürün Bilgileri = Ürün Adı, Ürün Kodu, Birim Fiyatı, Stok Miktarı, Ölçü Birim(Adet, Kg, Gr vs)
+            ////  Müşteri Hareketleri = İşlem Tarihi, Ürün Adı, Birim Fiyatı, Miktarı, Tutarı, Kalan Alacak Tutarı
 
 
-            DateTime date= new DateTime (2023,11,15);
-            productname = "dress";
-            unitprice = 1000;
-            long? unitamount = 5;
-            unitprice = 1000;
-            int remainamount = 0;
+            //string customernamesurname = "ceydabaskural";
+            //int phonenumber = 0551121654;
+            //string address = "İzmir";
+            //decimal totaldebt = 1000m;
+            //decimal totalreceive = 1500m;
+
+            //string productname;
+            //productname = "dress";
+            //long productcode = 256487613268;
+            //int unitprice;
+            //unitprice = 1000;
+            //long stockamount = 2000;
+            //string unitofmeasurement = "pcs";
 
 
-            Console.WriteLine(customernamesurname);
-            Console.WriteLine(phonenumber);
-            Console.WriteLine(address);
-            Console.WriteLine(totaldebt);
-            Console.WriteLine(totalreceive);
-            Console.WriteLine(productname);
-            Console.WriteLine(productcode);
-            Console.WriteLine(unitprice);
-            Console.WriteLine(stockamount);
-            Console.WriteLine(unitofmeasurement);
-            Console.WriteLine(date);
-            Console.WriteLine(productname);
-            Console.WriteLine(unitprice);
-            Console.WriteLine(unitamount);
-            Console.WriteLine(remainamount);
+            //DateTime date= new DateTime (2023,11,15);
+            //productname = "dress";
+            //unitprice = 1000;
+            //long? unitamount = 5;
+            //unitprice = 1000;
+            //int remainamount = 0;
 
-          
+
+            //Console.WriteLine(customernamesurname);
+            //Console.WriteLine(phonenumber);
+            //Console.WriteLine(address);
+            //Console.WriteLine(totaldebt);
+            //Console.WriteLine(totalreceive);
+            //Console.WriteLine(productname);
+            //Console.WriteLine(productcode);
+            //Console.WriteLine(unitprice);
+            //Console.WriteLine(stockamount);
+            //Console.WriteLine(unitofmeasurement);
+            //Console.WriteLine(date);
+            //Console.WriteLine(productname);
+            //Console.WriteLine(unitprice);
+            //Console.WriteLine(unitamount);
+            //Console.WriteLine(remainamount);
+
+
 
 
 
@@ -189,7 +190,58 @@ namespace _02_AritmetikselOperatorler
             //  Ders Notları = Öğrenci Adı, Ders Adı, 1.Sınav Notu, 2.Sınav Notu, Not Ortalaması
 
 
+            string ögrenciAdi;
+            ögrenciAdi   = "ceyda başkural";
+            DateTime kayitTarihi = new DateTime(2023, 11, 15);
+            string sinifi = "a152";
+            decimal notOrtalamasi = 2.50m;
 
+            string veliAdi="murat";
+            long telNo = 54513651654;
+            string evAdresi = "109 sokak/İzmir";
+            string isAdresi = null;
+            bool annesiMi = true;
+
+            string dersadi = "ingilizce";
+            bool sayisalMi=true;
+
+            string öğrenciAdi = "ceyda baskural";
+            string dersAdi = "ingilizce";
+            decimal sinav1 = 90m;
+            decimal sinav2 = 80m;
+            decimal notOrt = (sinav1 + sinav2) / 2;
+
+            Console.WriteLine(ögrenciAdi);
+            Console.WriteLine(kayitTarihi);
+            Console.WriteLine(sinifi);
+            Console.WriteLine(notOrtalamasi);
+            Console.WriteLine(veliAdi);
+            Console.WriteLine(telNo);
+            Console.WriteLine(evAdresi);
+            Console.WriteLine(isAdresi);
+            Console.WriteLine(!annesiMi);
+            Console.WriteLine(dersadi);
+            Console.WriteLine(!sayisalMi);
+            Console.WriteLine(öğrenciAdi);
+            Console.WriteLine(dersAdi);
+            Console.WriteLine(sinav1);
+            Console.WriteLine(sinav2);
+            Console.WriteLine(notOrt);
+
+            Console.ReadKey();
+
+
+
+
+
+
+
+
+
+
+            {
+
+        }
 
         }
     }
