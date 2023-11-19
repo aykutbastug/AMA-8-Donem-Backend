@@ -21,24 +21,24 @@ namespace _03_TipDonusturmeMetotlari
             ------------------------------
             //!!İllaki yukarıda yaptığımız gibi Convert.ToInt32() metodunun içine doğrudan bir değişken vermek zorunda değiliz -sayi1- gibi, direkt değer de verebilri mesela;
 
-            int sonuc = Convert.ToInt32("78") - Convert.ToInt32("20");
+            //int sonuc = Convert.ToInt32("78") - Convert.ToInt32("20");
 
             ------------------------------
 
             //!! iç içe convert işlemi de yapılabilir mesela;
 
-            int sonuc = Convert.ToInt32("78") - Convert.ToInt32(Convert.ToInt16(sayi1) + Convert.ToInt16(sayi2));
+            //int sonuc = Convert.ToInt32("78") - Convert.ToInt32(Convert.ToInt16(sayi1) + Convert.ToInt16(sayi2));
 
             ----------------------------
 
-            char karakter = Convert.ToChar(sayi1);
-            char karakter = Convert.ToChar("5");
+            //char karakter = Convert.ToChar(sayi1);
+            //char karakter = Convert.ToChar("5");
 
             ---------------------------
 
-            int birinciSayi = 8;
-            int ikinciSayi = 9;
-            double sonuc = birinciSayi / ikinciSayi; /*--> int tipinde değerler olduğu için sonuç virgüllü olarak bize dönmez*/
+            //int birinciSayi = 8;
+            //int ikinciSayi = 9;
+            //double sonuc = birinciSayi / ikinciSayi; /*--> int tipinde değerler olduğu için sonuç virgüllü olarak bize dönmez*/
 
             //Eğer virgüllü olarak almak istiyorsam bu işlemi "- double sonuc = birinciSayi / ikinciSayi-"  convert etmem gerek;
 

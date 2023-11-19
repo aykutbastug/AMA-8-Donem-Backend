@@ -16,6 +16,7 @@
             finally
             { 
                 //hata alınsada alınmasada çalışmasını istediğimiz kodları bu bloğa yazabiliriz
+                //finally bloğunu yazmak zorunda değiliz, yazdıysak hata alsada almasa da bu bloğa giriyor
             }
 
 
@@ -35,6 +36,7 @@
             //    Console.WriteLine("StackTrace=" + hata.StackTrace);
             //}
 
+            //herhangi bir hata aldığında devam et yani catch bloğuna geç anlamına gelen kod: catch bloğunu bos bırakıyoruz
 
             //try
             //{

@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+
             //int sayi1 = 9;
 
             //switch (sayi1)
@@ -41,6 +42,10 @@
             //kullanıcıda bir ay girmesini isteyelim. girdiği ayın mevsimini geriye dönelim.
             //Aralık => Aralık ayı kış mevsimindedir
 
+            Console.WriteLine("bir ay giriniz");
+            string ay=Console.ReadLine();
+  
+
             Console.WriteLine("Bir ay giriniz..");
             string girilenAy = Console.ReadLine();
 
@@ -75,9 +80,6 @@
                     break;
             }
 
-
-
-
             Console.WriteLine("Bir ay giriniz..");
             girilenAy = Console.ReadLine();
             if (girilenAy == "Aralık" || girilenAy == "Ocak" || girilenAy == "Şubat")
@@ -93,7 +95,7 @@
                 Console.WriteLine($"{girilenAy} ayı SONBAHAR mevsimindedir.");
 
             else
-                Console.WriteLine("Hatalı bir değer girdiniz");
+                Console.WriteLine("Hatalı bir değer girdiniz"); 
 
         }
     }

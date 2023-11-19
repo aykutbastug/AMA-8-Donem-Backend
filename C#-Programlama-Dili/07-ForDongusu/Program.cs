@@ -1,4 +1,6 @@
-﻿namespace _07_ForDongusu
+﻿using System.ComponentModel.Design;
+
+namespace _07_ForDongusu
 {
     internal class Program
     {
@@ -100,6 +102,27 @@
             //    }
             //}
 
+
+            //Console.WriteLine("bir sayı giriniz");
+            //int sayi = Convert.ToInt32(Console.ReadLine());
+            //if (sayi <= 0)
+            //    Console.Write("hatalı sonuc");
+
+            //else if (sayi >= 0) ;
+            //Console.WriteLine("ikinci sayiyi giriniz");
+
+            //int sayi2 = Convert.ToInt32(Console.ReadLine());
+
+            //if (sayi2 <= 0) ;
+            //Console.Write("hatalı sonuc");
+
+            //else (sayi > 0 && sayi2 > 0);
+            //Console.WriteLine(sayi * sayi2);
+
+
+
+
+            Console.ReadKey();
 
 
 
