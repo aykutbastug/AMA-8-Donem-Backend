@@ -21,7 +21,7 @@
 
 
 
-            /*--> else bağlacının uzun kullanımı*/
+            /*--> else bağlacının uzun kullanımı yani if kullanarak uzun yazmak zorunda kalırız*/
             //if (kullaniciAdi == "aykut")
             //{
             //    Console.WriteLine("Kullanıcı adı doğru");
@@ -105,7 +105,7 @@
             // <=
             // % 2 --Mod alma
 
-            //if else örnek:
+            //else if örnek:
 
             //int sayi1 = 10;
             //int sayi2 = 20;

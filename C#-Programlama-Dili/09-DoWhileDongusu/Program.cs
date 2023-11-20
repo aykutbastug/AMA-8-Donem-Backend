@@ -12,6 +12,8 @@
             //}
             //while (true);
 
+            //örnek:
+
             //int i = 1;
             //do
             //{
@@ -20,6 +22,7 @@
 
             //} while (i < 1);
 
+            //yukarıdaki örneğin while ile kullanımı:
 
             //i = 1;
             //while (i < 1)
@@ -28,6 +31,7 @@
             //    i++;
             //}
 
+            //başka örnek:
 
             int sayi = 0;
             do

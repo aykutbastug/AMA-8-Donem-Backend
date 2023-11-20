@@ -47,6 +47,14 @@
             //}
             //catch {; }
 
+            int sayi = 9;
+            while (sayi >= 0) ;
+            {
+                Console.WriteLine(sayi);
+                sayi--;
+            }
+
+
 
             try
             {

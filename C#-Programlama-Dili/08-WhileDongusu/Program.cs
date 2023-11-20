@@ -23,6 +23,7 @@
 
 
             //!!! - SONSUZ DÖNGÜ 2
+            //int i = 0;
             //while (i == 0)
             //{
 
@@ -43,6 +44,8 @@
             //    sayi++;
             //    Console.WriteLine(sayi);
             //}
+            //
+            // (burada 10 da yazdırıyor çünkü sayi++ komutu Console.WriteLine(sayi) komutunun üstünde;yani while ın içinde sayı 9<10 mu diye kontrol ediyor, evet doğru küçüktür, sonra alt satıra geçiyor sayıyı bir arttırıyor ve yazdırıyor)
 
 
             //bu kullanımda 0 ve 9 dahil olmak üzere sayıları ekrana yazdırır
@@ -57,12 +60,27 @@
             //9 dan 0 a kadar sayıları yanyana yazdıran kod bloğunu yazınız
             //9876543210
 
-            int i = 9;
-            while (i >= 0)
-            {
-                Console.Write(i);
-                i--;
-            }
+            //while bağlacı ile yazımı:
+
+            //int i = 9;
+            //while (i >= 0)
+            //{
+            //    Console.Write(i);
+            //    i--;
+            //}
+
+
+            //for bağlacı ile yazımı:
+
+            //for (int a = 0; a < 10; a++) (ben yazdım)
+            // {
+            //     Console.WriteLine(a);
+            // }
+
+
+
+
+            //başka örnekler:
 
             //for (int a = 0; a < 6; a++)
             //    Console.WriteLine(a);
@@ -72,6 +90,8 @@
             //    Console.WriteLine(i);
             //    i++;
             //}
+
+
 
         }
     }

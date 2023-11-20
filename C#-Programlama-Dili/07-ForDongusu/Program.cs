@@ -18,12 +18,12 @@ namespace _07_ForDongusu
             //    Console.WriteLine(i);
             //}
 
-            //for (int i = 0; i < 20; i+=2)
+            //for (int i = 0; i < 20; i += 2)
             //{
             //    Console.WriteLine(i);
             //}
 
-            //for (int i = 20; i > 0; i--)
+            //for (int i = 20; i > 0; i--)       /* (20'den geriye yazdırıyor)*/
             //{
             //    Console.WriteLine(i);
             //}
@@ -34,11 +34,6 @@ namespace _07_ForDongusu
             //    Console.WriteLine(i);
             //}
 
-
-            //for (int i =0; i < 0; i++)
-            //{
-
-            //}
 
             //int sayi = 0;
             //int baslangic = 25;
@@ -53,6 +48,17 @@ namespace _07_ForDongusu
 
 
             //1 ile 50 arasındaki çift sayıları ekrana yazdıran kod bloğu
+
+            //for (int sayi = 2; sayi <= 50; sayi += 2)
+            //{
+            //    Console.WriteLine(sayi);
+            //}
+
+
+            //başlangıç sayısını kullanıcıdan al 
+            //bitiş sayısını kullanıcıdan al
+            //ikisi arasındaki çift sayıları yazdır:
+
             //Console.WriteLine("Başlangıç değerini giriniz :");
             //int baslangic = Convert.ToInt32(Console.ReadLine());
 
@@ -66,6 +72,7 @@ namespace _07_ForDongusu
             //        Console.WriteLine(i);
             //}
 
+            //2.çözüm
 
             //if (baslangic % 2 != 0)
             //    baslangic++;
@@ -93,6 +100,7 @@ namespace _07_ForDongusu
             //    Console.WriteLine(metin);
             //}
 
+            //iç içe for kullanımı:
 
             //for (int sayi = 1; sayi < 15; sayi++) 
             //{ 
@@ -102,7 +110,7 @@ namespace _07_ForDongusu
             //    }
             //}
 
-
+            //örnek:
             //Console.WriteLine("bir sayı giriniz");
             //int sayi = Convert.ToInt32(Console.ReadLine());
             //if (sayi <= 0)
@@ -126,7 +134,7 @@ namespace _07_ForDongusu
 
 
 
-
+            //örnek:
             //1*1=1
             //1*2=2
             //..
