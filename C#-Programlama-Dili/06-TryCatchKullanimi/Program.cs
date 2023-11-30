@@ -47,12 +47,12 @@
             //}
             //catch {; }
 
-            int sayi = 9;
-            while (sayi >= 0) ;
-            {
-                Console.WriteLine(sayi);
-                sayi--;
-            }
+            //int sayi = 9;
+            //while (sayi >= 0) ;
+            //{
+            //    Console.WriteLine(sayi);
+            //    sayi--;
+            //}
 
 
 
@@ -67,7 +67,8 @@
             {
                 Console.WriteLine("Hata Alındı");
             }
-            finally {
+            finally
+            {
                 Console.WriteLine("işlem tamamlandı");
             }
 
