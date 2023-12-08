@@ -49,6 +49,31 @@ namespace _01_ConsoleApp
 			ogretmen.Adi = "Aykut";
 			Ogretmen.Soyadi = "BAŞTUĞ";
 
+
+			Console.Clear();
+			Sirket sirket = new Sirket();
+			sirket.PostaKodu = 34560;
+			sirket.Adi = "Acunmedya Akademi";
+            Console.WriteLine("Şirket Adı = " + sirket.Adi);
+
+
+            //Console.Clear();
+			Kare kare = new Kare();
+			kare.KenarUzunlugu = 120;
+            Console.WriteLine("Kenar Uzunluğu=" + kare.KenarUzunlugu);
+
+
+
+			Console.Clear();
+			Elektronik elektronik = new Elektronik("12313", "asasd");
+			//elektronik.ya
+
+
+			Telefon telefon = new Telefon("12313", "asasd");
+			telefon.RAM = "12 GB";
+			telefon.CPU = "Snapdrogan";
+			telefon.Renk = "Siyah";
+			
         }
 
 	}

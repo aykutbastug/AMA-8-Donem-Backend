@@ -60,8 +60,14 @@ namespace _02_ClassLibrary
         }
 
 
+        //Descructor (Yok edici metot)
+        ~Araba()
+        {
+            
+        }
+
         //Kisi isimli bir class olsun
         //KimlikNo, Adı, Soyadı, DoğumTarihi özellikleri olsun
         //Kisi sınıfını tcKimlikNo girmeden nesnesini oluşturmama izin vermesin.
-	}
+    }
 }

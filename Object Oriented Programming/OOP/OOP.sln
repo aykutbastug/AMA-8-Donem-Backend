@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-ConsoleApp", "01-ConsoleApp\01-ConsoleApp.csproj", "{E35B37DA-7A87-4A56-9F2A-B9D1EDAF2A3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-ConsoleApp", "01-ConsoleApp\01-ConsoleApp.csproj", "{E35B37DA-7A87-4A56-9F2A-B9D1EDAF2A3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-ClassLibrary", "02-ClassLibrary\02-ClassLibrary.csproj", "{E60AE70E-7C6C-40AD-AD27-B2FAECCDAA54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-ClassLibrary", "02-ClassLibrary\02-ClassLibrary.csproj", "{E60AE70E-7C6C-40AD-AD27-B2FAECCDAA54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-SealedClassKullanimi", "03-SealedClassKullanimi\03-SealedClassKullanimi.csproj", "{6D50665E-0D9F-4A31-99BE-EA5820088AFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E60AE70E-7C6C-40AD-AD27-B2FAECCDAA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E60AE70E-7C6C-40AD-AD27-B2FAECCDAA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E60AE70E-7C6C-40AD-AD27-B2FAECCDAA54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D50665E-0D9F-4A31-99BE-EA5820088AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D50665E-0D9F-4A31-99BE-EA5820088AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D50665E-0D9F-4A31-99BE-EA5820088AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D50665E-0D9F-4A31-99BE-EA5820088AFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
