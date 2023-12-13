@@ -48,10 +48,13 @@
                 Console.WriteLine($"{item} - {(int)_rol}");
             }
 
+
+            Kullanici kullanici = new Kullanici();
+            kullanici.Rol = Roller.SonKullanici;
         }
     }
 
-    enum Roller
+    public enum Roller
     {
         Yonetici,
         SonKullanici,
@@ -71,5 +74,10 @@
         SonKullanici = 15,
         Satici,
         Alici
+    }
+
+    public class Kullanici
+    {
+        public Roller Rol { get; set; } = Roller.Satici;
     }
 }
