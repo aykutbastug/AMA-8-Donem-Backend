@@ -120,3 +120,4 @@ select ProductID as [Ürün Kodu], UnitPrice as [Birim Fiyat], Quantity as [Mikt
 --3-from
 --4-where (varsa)
 --5-order by sıralama (varsa)
+
