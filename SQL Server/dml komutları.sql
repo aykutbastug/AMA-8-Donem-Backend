@@ -121,3 +121,31 @@ select ProductID as [Ürün Kodu], UnitPrice as [Birim Fiyat], Quantity as [Mikt
 --4-where (varsa)
 --5-order by sıralama (varsa)
 
+
+--SUM Function = tablonun içindeki satırlara ait istenen kolonun toplam değerini bize geriye döner
+select SUM(UnitPrice) from dbo.OrderDetails
+select SUM(UnitPrice) from dbo.OrderDetails where ProductID=5
+select SUM(UnitPrice * Quantity) as [Toplam Tutar] from dbo.OrderDetails where ProductID=5
+select SUM(UnitPrice * Quantity) as ToplamTutar from dbo.OrderDetails where ProductID=5
+
+
+--COUNT Function = tablonun içiersindeki kayıt sayısını verir
+select COUNT(*) FROM dbo.Categories
+select COUNT(*) as KayiSayisi from dbo.OrderDetails where ProductID=5
+
+
+--MIN Function = tablonun içindeki ilgili kolonun en küçük verisini geriye döner
+select MIN(UnitPrice) from dbo.Products
+select MIN(UnitPrice) from dbo.OrderDetails where ProductID IN (5,6,7,8)
+
+
+--MAX Function = tablonun içindeki ilgili kolonun en büyük verisini geriye döner
+select MAX(UnitPrice) from dbo.Products
+select MAX(UnitPrice) from dbo.OrderDetails where ProductID IN (5,6,7,8)
+select MAX((UnitPrice * Quantity) - Discount) from dbo.OrderDetails where ProductID IN (5,6,7,8)
+
+
+--AVG Function = tablo içindeki ilgili kolonun ortalama değerini verir. (Satıların toplamnı alır ve satır sayısına böler)
+select AVG(UnitPrice) from dbo.OrderDetails
+select AVG(UnitPrice) from dbo.OrderDetails where ProductID IN (5,6,7,8)
+select AVG((UnitPrice * Quantity) - Discount) from dbo.OrderDetails where ProductID IN (5,6,7,8)
