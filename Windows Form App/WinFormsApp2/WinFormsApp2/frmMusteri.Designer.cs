@@ -173,9 +173,11 @@
             Controls.Add(txtCustomerId);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            KeyPreview = true;
             Name = "frmMusteri";
             Text = "Müşteri Bilgileri";
             Load += frmMusteri_Load;
+            KeyDown += frmMusteri_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }

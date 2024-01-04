@@ -15,16 +15,28 @@ namespace WinFormsApp2
     public partial class frmMusteri : Form
     {
         private bool isNewRecord = false;
-        public frmMusteri(bool isNewRecord)
+
+        private Musteri musteri;
+
+        public frmMusteri(bool isNewRecord, Musteri musteri)
         {
             InitializeComponent();
             this.isNewRecord = isNewRecord;
+            this.musteri = musteri;
         }
-        
+
         private void frmMusteri_Load(object sender, EventArgs e)
         {
             if (!isNewRecord)
+            {
                 txtCustomerId.Enabled = false;
+
+                txtCustomerId.Text = musteri.CustomerId;
+                txtCompanyName.Text = musteri.CompanyName;
+                txtContactName.Text = musteri.ContactName;
+                txtCity.Text = musteri.City;
+                txtCountry.Text = musteri.Country;
+            }
         }
 
         private void btnVazgec_Click(object sender, EventArgs e)
@@ -34,38 +46,44 @@ namespace WinFormsApp2
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            musteri.CustomerId = txtCustomerId.Text;
+            musteri.CompanyName = txtCompanyName.Text;
+            musteri.ContactName = txtContactName.Text;
+            musteri.Country = txtCountry.Text;
+            musteri.City = txtCity.Text;
+
             if (isNewRecord)
             {
                 SqlCommand cmdControl = new SqlCommand("select count(*) from dbo.Customers where CustomerID=@CustomerID", MyConnection.Connection);
                 cmdControl.Parameters.AddWithValue("CustomerID", txtCustomerId.Text);
                 MyConnection.Connection.Open();
-
                 int rowCount = (int)cmdControl.ExecuteScalar();
+                MyConnection.Connection.Close();
 
                 if (rowCount == 0)
                 {
-                    SqlCommand cmd = new SqlCommand("insert into dbo.Customers (CustomerID, CompanyName, ContactName, City, Country) values (@CustomerID, @CompanyName, @ContactName, @City, @Country)", MyConnection.Connection);
-                    cmd.Parameters.AddWithValue("CustomerID", txtCustomerId.Text);
-                    cmd.Parameters.AddWithValue("CompanyName", txtCompanyName.Text);
-                    cmd.Parameters.AddWithValue("ContactName", txtContactName.Text);
-                    cmd.Parameters.AddWithValue("City", txtCity.Text);
-                    cmd.Parameters.AddWithValue("Country", txtCountry.Text);
-
-                    cmd.ExecuteNonQuery();
-                    MyConnection.Connection.Close();
+                    MusteriMetotlari.KayitEkle(musteri);
                     this.Close();
                 }
                 else
                 {
-                    MyConnection.Connection.Close();
                     MessageBox.Show("Girilen CustomerId değeri zaten kayıtlı.\nLütfen farklı bir ID girin.");
                 }
 
             }
             else
             {
-                //update cümlesi çalıştırılacak
+                MusteriMetotlari.Guncelle(musteri);
+                this.Close();
             }
+        }
+
+        private void frmMusteri_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnKaydet_Click(btnKaydet, null);
+            else if (e.KeyCode == Keys.Escape)
+                btnVazgec_Click(btnVazgec, null);
         }
     }
 }

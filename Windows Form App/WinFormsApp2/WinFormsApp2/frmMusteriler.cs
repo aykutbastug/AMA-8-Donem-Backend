@@ -83,21 +83,49 @@ namespace WinFormsApp2
 
         private void menuItemSil_Click(object sender, EventArgs e)
         {
+            if (gridListe.SelectedRows.Count == 0)
+                return;
 
+            Musteri musteri = MusteriMetotlari.Getir(gridListe.CurrentRow.Cells[0].Value.ToString());
+
+            frmMusteriSil frm = new frmMusteriSil(musteri);
+            frm.ShowDialog();
+            VerileriListele();
         }
 
         private void menuItemDuzenle_Click(object sender, EventArgs e)
         {
-            frmMusteri frmMusteri = new frmMusteri(false);
-            frmMusteri.txtCustomerId.Text = "";
-            
+            if (gridListe.SelectedRows.Count == 0)
+                return;
+                        
+            Musteri musteri = MusteriMetotlari.Getir(gridListe.CurrentRow.Cells[0].Value.ToString());
+
+            if (string.IsNullOrEmpty(musteri.CustomerId))
+            {
+                MessageBox.Show($"{gridListe.CurrentRow.Cells[0].Value} ID'li kayıt bulunamadı..");
+                return;
+            }
+
+            frmMusteri frmMusteri = new frmMusteri(false, musteri);
             frmMusteri.ShowDialog();
+            VerileriListele();            
         }
 
         private void btnYeniKayit_Click(object sender, EventArgs e)
         {
-            frmMusteri frmMusteri = new frmMusteri(true);
+            frmMusteri frmMusteri = new frmMusteri(true, new Musteri());
             frmMusteri.ShowDialog();
+            VerileriListele();
+
+        }
+
+        private void VerileriListele()
+        {
+            //if (txtAra.TextLength == 0)
+            if (string.IsNullOrEmpty(txtAra.Text))
+                frmMusteriler_Load(this, null);
+            else
+                btnAra_Click(btnAra, null);
         }
     }
 }
