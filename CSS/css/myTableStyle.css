@@ -1,0 +1,27 @@
+table, th, td {
+    border: 1px solid blue;    
+}
+
+table {
+    width: 100%;
+    /* display: none; */
+    max-width: 700px;
+    min-width: 400px;
+
+    max-height: 500px;
+    min-height: 150px;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+}
+
+.tdAdi {
+    width: 100px;
+}
+
+img {
+    position: absolute;
+    z-index: -1;
+}

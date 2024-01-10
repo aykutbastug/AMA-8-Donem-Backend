@@ -1,0 +1,102 @@
+/* yorum satırı */
+
+body {
+    background-color: lightblue; /* yorum satırı */
+    /*opacity: 0.4;  şeffalık değeri tanımlak için kullanılır */
+    /* background-image: url("../img/arkaPlanResmi.jpg");
+    background-repeat: no-repeat; */
+    /* background-position: right top; */
+
+}
+
+h1 {
+    color: navy; /* color name ile renk tanımlama*/
+    color: #c63434; /* HEX value ile renk tanımlama*/
+    color: rgb(216, 106, 38); /* RGB value ile renk tanımlama*/
+
+    text-shadow: 2px 2px 5px gray;
+}
+
+.kenar {
+    border-style: solid;
+    border-width: 5px;
+    border-color: #c63434;
+
+    border-left-color: rgb(57, 57, 189);
+    border-left-width: 15px;
+
+
+    border: 10px solid #84c634;
+    border-bottom: 20px dotted #34c6a9;
+
+    border-radius: 20px;
+    border-bottom-right-radius: 50px;
+
+    /* margin: 30px; */
+    margin-top: 30px;
+    padding: 50px;
+    padding-bottom: 70px;
+
+    height: 200px;
+    width: 300px;
+    /* width: 50%; */
+    
+    /* 
+        bottom = alt kenar
+        top = üst kenar
+        right = sağ kenar
+        left = sol kenar
+    
+    */
+    font-size: 38px;
+}
+
+.textStyle {
+    color: blue;
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-color: #b22944;
+    text-transform: capitalize;
+
+    letter-spacing: 2px;
+    line-height: 30px;
+    word-spacing: 5px;
+
+    font-family: "Trirong";
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* .link {
+    color: #b22944;
+} */
+
+/* imleç üzerine geldiğinde çalışır */
+/* a:hover{
+    color: yellow;
+    font-weight: bold;
+} */
+
+/* tıklandığı anda çalışır */
+/* a:active{
+    color: red;
+} */
+
+/* link adresi daha önceden ziyaret edildi ise çalışır */
+/* a:visited{
+    color: green;
+} */
+
+a:hover, a:active{
+    background-color: red;
+}
+
+.unorderedList{
+    list-style-type: square;
+    /* list-style-image: url('../img/rightArrow.png');     */
+}
+
+.orderedList{
+    list-style-type: lower-alpha;
+}

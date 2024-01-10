@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. YÖNTEM = (element selector) etiket ismi ile css kodları yazmak için aşağıdaki şekilde kullanabiliriz
+        
+        p {
+            color: red;
+            font-weight: bold;
+        }
+
+        div {
+            color: blue;
+            font-size: 12px;
+        } */
+
+        /*2. YÖNTEM = (id selector) id attribute ile css tanımlamak için kullanabiliriz
+        
+        #paragraf1 {
+            color: red;
+            font-weight: bold;
+        }
+
+        #paragraf2 {
+            color: blue;
+        } */
+
+
+        /*3. YÖNTEM = (class selector) class attribute ile css tanımlamak için kullanabiliriz 
+        
+        .paragraf {
+            color: red !important;
+            font-weight: bold;
+        }
+
+        .paragraf2 {
+            color: yellow;
+        } */
+
+
+        /* !important */
+
+
+        .kalinYazi{
+            font-weight: bold;
+        }
+
+        .sariRenk {
+            color: yellow;
+        }
+
+        .maviRenk {
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <p id="paragraf1">deneme</p>
+    <div id="paragraf1">deneme 2</div>
+    <p id="paragraf2" class="paragraf">deneme</p>
+    <p>deneme</p>
+    <div style="color: green;" class="paragraf">deneme 2</div>
+    <br>    
+    <p class="kalinYazi maviRenk sariRenk">deneme</p>
+    <div>deneme 2</div>
+</body>
+</html>
