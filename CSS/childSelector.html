@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div elementinin altındaki tüm p elementlerine aşağıdaki css kodlarını verir. iç içe elementler olsada bu değerleri set eder.
+        
+            div p {
+            background-color: green;
+            color: white;
+        } */
+
+        div > p {
+            background-color: green;
+            color: white;
+        }
+
+        img {
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>1 - Lorem ipsum dolor sit</p>
+        <p>2- Lorem, ipsum dolor.</p>
+        <p>3- Lorem, ipsum dolor.</p>
+        <section><p>4- Lorem ipsum dolor sit.</p></section>
+    </div>
+
+    <p>5- Lorem ipsum dolor sit.</p>
+    <p>6- Lorem ipsum dolor sit amet.</p>
+
+    <br><br>
+    <img src="https://picsum.photos/200/200" alt="" class="img1">
+</body>
+</html>
