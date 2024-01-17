@@ -47,6 +47,9 @@ console.log("Kişi:", kisi);
 
 let kisiler = [kisi, kisi2];
 console.log(kisiler);
+// kisiler.forEach(element => {
+//     element.adi;
+// });
 
 
 let kisi3 = { adi: "Aykut'un", soyadi: "Baştuğ2\"sdf", dogumTarihi: new Date("1986-08-29")};

@@ -37,6 +37,100 @@
             //document.getElementById("sonuc").innerHTML = toplam;
             document.getElementById("sonuc").innerText = toplam;
         }
+
+        
+        function DiziOrnekleri() {
+          var meyveler = ["Muz", "Cilek", "Elma", "Karpuz"];
+
+          //dizinin elemanlarını virgül ile ayırarak yan yana yazar
+          //document.getElementById("divDizi").innerHTML = meyveler.toString();
+
+          //dizinin elemanlarını tire ile ayırarak yan yana yazar
+          //document.getElementById("divDizi").innerHTML = meyveler.join(" - ");
+
+          //dizinin en son elemanını siler
+          //meyveler.pop();
+
+          //diziye yeni bir eleman ekler
+          //meyveler.push("Kivi");
+
+          //dizinin elemanlarını küçükten büyüğe sıralama yapar
+          //meyveler.sort();
+
+          //dizinin elemanlarını büyükten küçüğe sıralama yapar
+          meyveler.sort();
+          meyveler.reverse();
+
+          document.getElementById("divDizi").innerHTML = meyveler.join(" - ");
+        }
+
+        function BuyukSayiyiBul() {
+            var sayi1 = Number(document.getElementById("inputSayi1").value);
+            var sayi2 = Number(document.getElementById("inputSayi2").value);
+
+            if (sayi1 > sayi2){
+              alert("Sayı 1 büyüktür");
+            }
+            else if (sayi2 > sayi1){
+              alert("Sayı 2 büyüktür");
+            }
+            else {
+              alert("Sayılar eşittir");
+            }
+        }
+
+      function CiftSayilariYazdir(){
+        for (let i = 0; i < 10; i++) {
+          if (i % 2 == 0){
+            console.log(i);
+          }       
+        }
+      }
+
+      function GunleriYazdir(){
+        let gunler = ["Pazartesi","Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"];
+
+        for (const gun in gunler) {
+          console.log(gunler[gun]);          
+        }
+
+        gunler.forEach(eleman => {
+          console.log(eleman);
+        });
+
+        let sayilar = [10, 20 , 25, 20, 35];
+        sayilar.forEach(eleman =>{
+          console.log(eleman);
+        });
+      }
+
+      function Mavi(){
+        document.getElementById("divMetin").style.color = "blue"; 
+
+        let elements = document.getElementsByClassName("form-control");
+        console.log(elements);
+
+        for (const elm in elements) {
+          elements[elm].style.color =  "blue";
+        }
+      }
+      function Yesil(){
+        document.getElementById("divMetin").style.color = "green"; 
+
+        let elements = document.getElementsByClassName("form-control");
+        for (const elm in elements) {
+          elements[elm].style.color =  "green";
+        }
+      }
+      function Kirmizi(){
+        document.getElementById("divMetin").style.color = "red";         
+
+        let elements = document.getElementsByClassName("form-control");
+        for (const elm in elements) {
+          elements[elm].style.color =  "red";
+        }
+      }
+
     </script>
     
 </head>
@@ -70,6 +164,34 @@
           <div class="row mt-2">
             <h1 id="sonuc"></h1>
           </div>
+
+
+          <br><br>
+          <h1>Diziler (Arrays)</h1>
+          <button class="btn btn-success" onclick="DiziOrnekleri()">Yazdır</button>
+
+          <br><br>
+          <div id="divDizi"></div>
+
+
+          <br><br>
+          <h1>If Örneği</h1>
+          <button class="btn btn-success" onclick="BuyukSayiyiBul()">Büyük Sayıyı Bul</button>
+
+
+          <br><br>
+          <h1>Döngüler</h1>
+          <button class="btn btn-success" onclick="CiftSayilariYazdir()">10 a kadar olan çift sayıları yazdır</button>
+          <button class="btn btn-success" onclick="GunleriYazdir()">Günler</button>
+
+          
+
+          <br><br>
+          <h1>CSS kodu güncelleme</h1>
+          <button class="btn btn-primary" onclick="Mavi()">Mavi</button>
+          <button class="btn btn-success" onclick="Yesil()">Yeşil</button>
+          <button class="btn btn-danger" onclick="Kirmizi()">Kırmızı</button>
+          <div id="divMetin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, in quidem? Error perferendis illo molestias vero consequatur exercitationem sint dolore magni, aliquam, praesentium dicta iusto quod tempore iure eveniet enim.</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
