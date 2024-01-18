@@ -13,11 +13,18 @@ namespace WebApplication1.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            string[] dizi = new string[] { "Mercedes", "Opel", "Wolswagen" };
+
+            return View(dizi);
         }
 
         public IActionResult About()
         {
+            DateTime dateTime = DateTime.Now;
+            string adi = "Aykut";
+
+
+
             return View("AboutDeneme");
         }
     }

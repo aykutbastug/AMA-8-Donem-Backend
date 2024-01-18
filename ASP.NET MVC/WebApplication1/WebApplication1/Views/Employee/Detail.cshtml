@@ -1,0 +1,31 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detail</h1>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <td>Adı</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>Soyadı</td>
+            <td>@Model.Surname</td>
+        </tr>
+    </table>
+    
+</div>
+<div>   
+    <a asp-action="Index">Back to List</a>
+</div>

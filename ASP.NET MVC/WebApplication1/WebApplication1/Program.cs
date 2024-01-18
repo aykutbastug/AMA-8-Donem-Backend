@@ -1,4 +1,4 @@
-namespace WebApplication1
+﻿namespace WebApplication1
 {
     public class Program
     {
@@ -12,6 +12,9 @@ namespace WebApplication1
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
+
+            //app.Environment.IsDevelopment() == true => debug(development) modda çalışıyorsa
+
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");

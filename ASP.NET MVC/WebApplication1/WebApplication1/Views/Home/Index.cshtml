@@ -1,8 +1,75 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
+    // string saat = DateTime.Now.ToShortTimeString();
+    // int yil = DateTime.Now.Year;
 }
 
+@{
+    string saat = DateTime.Now.ToShortTimeString();
+    int yil = DateTime.Now.Year;
+
+    string[] renkler = new string[] { "Kırmızı", "Yeşil", "Mavi" };
+}
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    @{
+        // string saat = DateTime.Now.ToShortTimeString();
+        // int yil = DateTime.Now.Year;
+
+        // for (int i = 0; i < 10; i++)
+        // {
+            
+        // }
+    }
+    <strong>Saat : </strong>@saat 'dır.
+
+    <br />
+    <h3>Sayılar</h3>
+    <ul>
+        @for (int i = 0; i < 10; i++)
+        {
+            <li>@i</li>
+        }
+    </ul>
+
+    <br />
+    <h3>Renkler</h3>
+    <ul>
+        @{
+            int sayi = 0; 
+        }
+        @foreach (string item in renkler)
+        {
+            sayi++;
+            string renkKodu = "";
+            if (item == "Kırmızı")
+            {
+                renkKodu = "danger";
+            }
+            else if (item == "Yeşil")
+            {
+                renkKodu = "success";
+            }
+            else
+            {
+                renkKodu = "primary";
+            }
+
+            <li class="text-@renkKodu">@sayi. Renk = @item</li>  
+        }
+    </ul>
+    <br />
+    <h3>Çift Sayılar</h3>
+    <ul>
+        @for (int i = 0; i < 10; i++)
+        {
+            if (i % 2 == 0)
+            {
+                <li>@i</li>
+            }
+        }
+    </ul>
 </div>

@@ -1,0 +1,69 @@
+﻿@model List<Employee>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Adı
+            </th>
+            <th>
+                Soyadı
+            </th>
+            <th>
+                Görevi
+            </th>
+            <th>
+                Durumu
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Surname
+                </td>
+                <td>
+                    @item.Gorev
+                </td>
+                <td>
+                    @if (item.Durumu)
+                    {
+                        <span class="badge bg-success">Aktif</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Pasif</span>
+                    }
+
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-outline-warning" href="#">Edit</a>
+                    <a class="btn btn-sm btn-outline-primary" href="#">Details</a>
+                    <a class="btn btn-sm btn-outline-danger" href="#">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
