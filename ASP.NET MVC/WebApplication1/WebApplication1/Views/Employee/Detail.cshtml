@@ -5,27 +5,73 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Detail</h1>
-
+<h1>Personel Bilgileri</h1>
+<hr />
 <div>
-    <h4>Employee</h4>
     <hr />
-    <table>
-        <tr>
-            <td>Id</td>
-            <td>@Model.Id</td>
-        </tr>
-        <tr>
-            <td>Adı</td>
-            <td>@Model.Name</td>
-        </tr>
-        <tr>
-            <td>Soyadı</td>
-            <td>@Model.Surname</td>
-        </tr>
-    </table>
-    
+
+    @if (Model == null)
+    {
+        <div class="badge bg-warning">Personel kaydı bulunamadı</div>
+    }
+    else
+    {
+        @*  <table>
+    <tr>
+    <td>Id</td>
+    <td>@Model.Id</td>
+    </tr>
+    <tr>
+    <td>Adı</td>
+    <td>@Model.Name</td>
+    </tr>
+    <tr>
+    <td>Soyadı</td>
+    <td>@Model.Surname</td>
+    </tr>
+    </table> *@
+
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Surname)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Surname)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Gorev)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Gorev)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Durumu)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Durumu)
+            </dd>
+        </dl>
+    }
+
+
+
 </div>
-<div>   
+<div>
     <a asp-action="Index">Back to List</a>
 </div>
