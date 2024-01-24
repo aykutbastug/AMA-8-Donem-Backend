@@ -3,12 +3,34 @@
 @{
     ViewData["Title"] = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Employee employee = ViewBag.personel;
 }
 
 <h1>Personel Bilgileri</h1>
 <hr />
 <div>
     <hr />
+
+
+    <table>
+        <tr>
+            <td>Kullanıcı Adı</td>
+            <td>@ViewBag.kullaniciAdi</td>
+        </tr>
+        <tr>
+            <td>Personel Adı</td>
+            <td>@employee.Name</td>
+        </tr>
+        <tr>
+            <td>Gönderilen Sayı</td>
+            <td>@ViewBag.sayi</td>
+        </tr>
+        <tr>
+            <td>View data Name Surname</td>
+            <td>@ViewData["kullaniciAdi"]</td>
+        </tr>
+    </table>
 
     @if (Model == null)
     {

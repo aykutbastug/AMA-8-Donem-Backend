@@ -26,9 +26,9 @@ namespace WebApplication1.Controllers
                     };
 
                     employees.Add(employee);
-                } 
+                }
             }
-            
+
 
             return View(employees);
         }
@@ -39,7 +39,13 @@ namespace WebApplication1.Controllers
         {
             //select top 1 e.* from dbo.Employees as e where e.EmployeeId=1
             Employee employee = employees.Where(x => x.Id == id).FirstOrDefault();
-            
+            ViewBag.kullaniciAdi = "aykut.bastug";
+            ViewBag.personel = employee;
+            ViewBag.sayi = 43;
+
+
+            ViewData["kullaniciAdi"] = employee.Name + " " + employee.Surname;
+
 
             return View(employee);
         }
@@ -59,10 +65,26 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public IActionResult Create(Employee model)
         {
-            employees.Add(model);
-            //return View("Index", employees);
-            //return RedirectToAction("Index");
-            return RedirectToAction(nameof(Index));
+            if (ModelState.IsValid)
+            {
+                if (employees.Count(x => x.Id == model.Id) == 0)
+                {
+                    employees.Add(model);
+                    //return View("Index", employees);
+                    //return RedirectToAction("Index");
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Girilen değer sistemde kayıtlı");
+                    return View(model);
+                }
+
+            }
+            else
+            {
+                return View(model);
+            }
         }
 
 
@@ -78,10 +100,18 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public IActionResult Edit(Employee model)
         {
-            int index = employees.IndexOf(employees.Find(e => e.Id == model.Id));
-            employees[index] = model;
-            
-            return RedirectToAction(nameof(Index));
+            if (ModelState.IsValid)
+            {
+                int index = employees.IndexOf(employees.Find(e => e.Id == model.Id));
+                employees[index] = model;
+
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View(model);
+            }
+           
         }
 
 
