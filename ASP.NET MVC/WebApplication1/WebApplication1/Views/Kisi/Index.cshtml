@@ -16,6 +16,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Id)
             </th>
+            <th></th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -24,9 +25,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
             </th>
             <th></th>
         </tr>
@@ -37,6 +35,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
+                <td>
+                    <a href="~/uploads/@item.ImageUrl" target="_blank">
+                        <img src="~/uploads/@item.ImageUrl" width="24" class="rounded-circle" />
+                    </a>
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -47,12 +50,11 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+
+                    @* <a asp-action="Details" asp-route-id="@item.Id">Details</a> *@
             </td>
         </tr>
 }

@@ -1,38 +1,43 @@
 ﻿@model WebApplication1.Models.Kisi
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h4>Yeni Kişi Oluştur</h4>
+<h4>Kişi Düzenle</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>            
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Id" class="form-control" type="hidden" />
+
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" maxlength="50" />
+                <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Surname" class="control-label"></label>
-                <input asp-for="Surname" class="form-control" maxlength="50" />
+                <input asp-for="Surname" class="form-control" />
                 <span asp-validation-for="Surname" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" maxlength="50" />
+                <input asp-for="Phone" class="form-control" />
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ImageUrl" class="control-label"></label>
                 <input class="form-control" type="file" name="file" accept="image/*" />
             </div>
+            <div class="form-group mt-2">
+                <img src="~/uploads/@Model.ImageUrl" class="img-thumbnail" />
+            </div>
             <div class="form-group mt-3">
-                <a asp-action="Index" class="btn btn-secondary">Listeye Geri Dön</a>
-                <input type="submit" value="Kaydet" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                <input type="submit" value="Update" class="btn btn-primary" />
             </div>
         </form>
     </div>
