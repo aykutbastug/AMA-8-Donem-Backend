@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ImageMagick;
+using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using System.Data.SqlClient;
 using WebApplication1.Models;
@@ -163,6 +164,17 @@ namespace WebApplication1.Controllers
             {
                 file.CopyTo(fileStream);
             }
+
+
+            MagickImage imageBig = new MagickImage(path);
+            MagickGeometry sizeBig = new MagickGeometry(800, 400);
+            //imageBig.Resize(800, 400);
+            imageBig.Resize(sizeBig);
+            imageBig.Quality = 40;
+
+            string newFileNameBig = fileName + DateTime.Now.ToString("yyMMddmmssfff") + "_800_400" + extension;
+            imageBig.Write(Path.Combine(wwwRootPath + "/uploads/", newFileNameBig));
+
 
             return newFileName;
         }
