@@ -1,0 +1,29 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Kategori Listesi";
+}
+
+<h1>Kategori Listesi</h1>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Kategori Oluştur</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>          
+            <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Name)</th>
+            <th width="120px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-warning" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a>
+                    <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
