@@ -1,0 +1,24 @@
+﻿@model Writer
+
+@{
+    ViewData["Title"] = "Yeni Yazar Oluştur";
+}
+
+<h4>Yeni Yazar Oluştur</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NameSurname" class="control-label"></label>
+                <input asp-for="NameSurname" class="form-control" />
+                <span asp-validation-for="NameSurname" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
