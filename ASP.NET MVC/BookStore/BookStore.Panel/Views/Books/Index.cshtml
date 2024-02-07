@@ -1,7 +1,37 @@
-﻿
+﻿@model List<Book>
 @{
     ViewData["Title"] = "Kitap Listesi";
 }
 
 <h1>Kitap Listesi</h1>
-
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Kitap Oluştur</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Name)</th>
+            <th>@Html.DisplayNameFor(model => model.FirstOrDefault().CategoryId)</th>
+            <th>@Html.DisplayNameFor(model => model.FirstOrDefault().WriterId)</th>
+            <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Price)</th>
+            <th>@Html.DisplayNameFor(model => model.FirstOrDefault().PageCount)</th>
+            <th width="120px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.CategoryId</td>
+                <td>@item.WriterId</td>
+                <td>@item.Price</td>
+                <td>@item.PageCount</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-warning" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a>
+                    <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

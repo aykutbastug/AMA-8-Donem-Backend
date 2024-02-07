@@ -61,6 +61,7 @@ namespace BookStore.Panel.Controllers
         }
 
 
+        [HttpGet]
         public IActionResult Edit(int id)
         {
             List<CommandParameter> parameters = new List<CommandParameter>();

@@ -1,0 +1,80 @@
+﻿@model BookCreateModel
+
+@{
+    ViewData["Title"] = "Yeni Kitap Oluştur";
+}
+
+<h4>Yeni Kitap Oluştur</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Book.Name" class="control-label"></label>
+                <input asp-for="Book.Name" class="form-control" />
+                <span asp-validation-for="Book.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.CategoryId" class="control-label"></label>
+                <select asp-for="Book.CategoryId" class="form-control">
+                   @*  @foreach (var item in (List<Category>)ViewBag.KategoriListesi)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }   *@
+                    
+                    @* @foreach (var item in ViewBag.KategoriListesi)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    } *@
+
+                    @foreach (var item in Model.Categories)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+
+                <span asp-validation-for="Book.CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.WriterId" class="control-label"></label>
+                <select asp-for="Book.WriterId" class="form-control"> 
+                    @foreach (var item in Model.Writers)
+                    {
+                        <option value="@item.Id">@item.NameSurname</option>
+                    }
+                </select>
+                <span asp-validation-for="Book.WriterId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.PageCount" class="control-label"></label>
+                <input asp-for="Book.PageCount" class="form-control" />
+                <span asp-validation-for="Book.PageCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Price" class="control-label"></label>
+                <input asp-for="Book.Price" class="form-control" />
+                <span asp-validation-for="Book.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.PublishDate" class="control-label"></label>
+                <input asp-for="Book.PublishDate" class="form-control" />
+                <span asp-validation-for="Book.PublishDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Description" class="control-label"></label>
+                <input asp-for="Book.Description" class="form-control" />
+                <span asp-validation-for="Book.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.ImageUrl" class="control-label"></label>
+                <input asp-for="Book.ImageUrl" class="form-control" />
+                <span asp-validation-for="Book.ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
