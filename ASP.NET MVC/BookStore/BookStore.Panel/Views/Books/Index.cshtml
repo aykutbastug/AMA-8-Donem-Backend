@@ -1,4 +1,4 @@
-﻿@model List<Book>
+﻿@model List<BookViewModel>
 @{
     ViewData["Title"] = "Kitap Listesi";
 }
@@ -10,6 +10,7 @@
 <table class="table table-hover">
     <thead>
         <tr>
+            <th></th>
             <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Name)</th>
             <th>@Html.DisplayNameFor(model => model.FirstOrDefault().CategoryId)</th>
             <th>@Html.DisplayNameFor(model => model.FirstOrDefault().WriterId)</th>
@@ -22,9 +23,14 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    <a href="~/uploads/books/@item.ImageUrl" target="_blank">
+                        <img src="~/uploads/books/@item.ImageUrl" alt="@item.Name" height="28px" />
+                    </a>
+                </td>
                 <td>@item.Name</td>
-                <td>@item.CategoryId</td>
-                <td>@item.WriterId</td>
+                <td>@item.CategoryName</td>
+                <td>@item.WriterName</td>
                 <td>@item.Price</td>
                 <td>@item.PageCount</td>
                 <td>

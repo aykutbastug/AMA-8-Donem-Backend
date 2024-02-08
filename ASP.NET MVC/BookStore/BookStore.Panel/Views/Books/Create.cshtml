@@ -8,7 +8,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Book.Name" class="control-label"></label>
@@ -68,8 +68,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Book.ImageUrl" class="control-label"></label>
-                <input asp-for="Book.ImageUrl" class="form-control" />
-                <span asp-validation-for="Book.ImageUrl" class="text-danger"></span>
+                <input class="form-control" type="file" name="file" accept="image/*" />
             </div>
             <div class="form-group mt-3">
                 <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
