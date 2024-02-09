@@ -182,6 +182,32 @@ namespace BookStore.Panel.Controllers
             return book;
         }
 
+        public BookViewModel GetBookViewModel(int id)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select b.*, c.Name as CategoryName, w.NameSurname as WriterName from dbo.Books as b inner join dbo.Categories as c on c.Id=b.CategoryId inner join dbo.Writers as w on w.Id=b.WriterId where b.Id=@id", connection);
+            da.SelectCommand.Parameters.AddWithValue("id", id);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+
+            BookViewModel book = new BookViewModel
+            {
+                Id = Convert.ToInt32(dt.Rows[0]["Id"]),
+                CategoryId = Convert.ToInt32(dt.Rows[0]["CategoryId"]),
+                Description = Convert.ToString(dt.Rows[0]["Description"]),
+                ImageUrl = dt.Rows[0]["ImageUrl"].ToString(),
+                Name = dt.Rows[0]["Name"].ToString(),
+                PageCount = Convert.ToInt32(dt.Rows[0]["PageCount"]),
+                Price = Convert.ToDouble(dt.Rows[0]["Price"]),
+                PublishDate = Convert.ToDateTime(dt.Rows[0]["PublishDate"]),
+                WriterId = Convert.ToInt32(dt.Rows[0]["WriterId"]),
+                CategoryName = dt.Rows[0]["CategoryName"].ToString(),
+                WriterName = dt.Rows[0]["WriterName"].ToString()
+            };
+
+            return book;
+        }
+
         public IActionResult Edit(int id)
         {
             ViewBag.KategoriListesi = GetCategories();
@@ -243,6 +269,41 @@ namespace BookStore.Panel.Controllers
                 ViewBag.YazarListesi = GetWriters();
 
                 return View(model);
+            }
+        }
+
+
+        public IActionResult Delete(int id)
+        {
+            return View(GetBookViewModel(id));
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Book book)
+        {
+            BookViewModel book1 = GetBookViewModel(book.Id);
+            if (book1 == null)
+            {
+                ModelState.AddModelError(string.Empty, book.Id + " numaralı kayıt sistemde bulunamadı.");
+                return View(book1);
+            }
+            else
+            {
+                string wwwRootPath = _environment.WebRootPath;
+                string path = Path.Combine(wwwRootPath + "/uploads/books/", book1.ImageUrl);
+                //C:\GitHub\aykutbastug\AMA-8-Donem-Backend\ASP.NET MVC\BookStore\BookStore.Panel\wwwroot\uploads\books\aklindanbirsayitut-20240208095254649.jpg
+
+                if (System.IO.File.Exists(path))
+                    System.IO.File.Delete(path);
+
+
+                SqlCommand cmd = new SqlCommand("delete from dbo.Books where Id=@id", connection);
+                cmd.Parameters.AddWithValue("id", book.Id);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                return RedirectToAction(nameof(Index));
             }
         }
     }

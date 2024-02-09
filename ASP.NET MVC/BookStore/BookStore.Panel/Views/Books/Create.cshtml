@@ -6,9 +6,9 @@
 
 <h4>Yeni Kitap Oluştur</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data">
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-4">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Book.Name" class="control-label"></label>
@@ -18,14 +18,14 @@
             <div class="form-group">
                 <label asp-for="Book.CategoryId" class="control-label"></label>
                 <select asp-for="Book.CategoryId" class="form-control">
-                   @*  @foreach (var item in (List<Category>)ViewBag.KategoriListesi)
+                    @*  @foreach (var item in (List<Category>)ViewBag.KategoriListesi)
                     {
-                        <option value="@item.Id">@item.Name</option>
+                    <option value="@item.Id">@item.Name</option>
                     }   *@
-                    
+
                     @* @foreach (var item in ViewBag.KategoriListesi)
                     {
-                        <option value="@item.Id">@item.Name</option>
+                    <option value="@item.Id">@item.Name</option>
                     } *@
 
                     @foreach (var item in Model.Categories)
@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Book.WriterId" class="control-label"></label>
-                <select asp-for="Book.WriterId" class="form-control"> 
+                <select asp-for="Book.WriterId" class="form-control">
                     @foreach (var item in Model.Writers)
                     {
                         <option value="@item.Id">@item.NameSurname</option>
@@ -61,11 +61,11 @@
                 <input asp-for="Book.PublishDate" class="form-control" />
                 <span asp-validation-for="Book.PublishDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="Book.Description" class="control-label"></label>
                 <input asp-for="Book.Description" class="form-control" />
                 <span asp-validation-for="Book.Description" class="text-danger"></span>
-            </div>
+            </div> *@
             <div class="form-group">
                 <label asp-for="Book.ImageUrl" class="control-label"></label>
                 <input class="form-control" type="file" name="file" accept="image/*" />
@@ -74,6 +74,18 @@
                 <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
                 <input type="submit" value="Kaydet" class="btn btn-primary" />
             </div>
-        </form>
+        </div>
+
+        <div class="col-md-8">
+            <textarea asp-for="Book.Description"></textarea>
+        </div>
     </div>
-</div>
+</form>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#Book_Description').summernote();
+        });
+    </script>
+}
