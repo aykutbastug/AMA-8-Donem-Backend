@@ -56,6 +56,16 @@
                 <label asp-for="ImageUrl" class="control-label"></label>
                 <input class="form-control" type="file" name="file" accept="image/*" />
             </div>
+            <div class="form-group">
+                <label asp-for="IsSelected" class="control-label"></label>
+                <input asp-for="IsSelected" />
+                <span asp-validation-for="IsSelected" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsBestSeller" class="control-label"></label>
+                <input asp-for="IsBestSeller" />
+                <span asp-validation-for="IsBestSeller" class="text-danger"></span>
+            </div>
             <div class="form-group mt-3">
                 <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
                 <input type="submit" value="Kaydet" class="btn btn-primary" />

@@ -41,7 +41,9 @@ namespace BookStore.Panel.Controllers
                     PublishDate = Convert.ToDateTime(row["PublishDate"]),
                     WriterId = Convert.ToInt32(row["WriterId"]),
                     CategoryName = row["CategoryName"].ToString(),
-                    WriterName = row["WriterName"].ToString()
+                    WriterName = row["WriterName"].ToString(),
+                    IsSelected = Convert.ToBoolean(row["IsSelected"]),
+                    IsBestSeller = Convert.ToBoolean(row["IsBestSeller"])
                 };
 
                 books.Add(book);
@@ -84,7 +86,7 @@ namespace BookStore.Panel.Controllers
                 }
 
 
-                SqlCommand cmd = new SqlCommand("insert into dbo.Books values (@name, @categoryId, @writerId, @pageCount, @price, @publishDate, @description, @imageUrl, '', '')", connection);
+                SqlCommand cmd = new SqlCommand("insert into dbo.Books values (@name, @categoryId, @writerId, @pageCount, @price, @publishDate, @description, @imageUrl, '', '', @isSelected, @isBestSeller)", connection);
                 cmd.Parameters.AddWithValue("name", model.Book.Name);
                 cmd.Parameters.AddWithValue("categoryId", model.Book.CategoryId);
                 cmd.Parameters.AddWithValue("writerId", model.Book.WriterId);
@@ -93,6 +95,8 @@ namespace BookStore.Panel.Controllers
                 cmd.Parameters.AddWithValue("publishDate", model.Book.PublishDate);
                 cmd.Parameters.AddWithValue("description", model.Book.Description);
                 cmd.Parameters.AddWithValue("imageUrl", newFileName);
+                cmd.Parameters.AddWithValue("isSelected", model.Book.IsSelected);
+                cmd.Parameters.AddWithValue("isBestSeller", model.Book.IsBestSeller);
 
                 connection.Open();
                 cmd.ExecuteNonQuery();
@@ -176,7 +180,9 @@ namespace BookStore.Panel.Controllers
                 PageCount = Convert.ToInt32(dt.Rows[0]["PageCount"]),
                 Price = Convert.ToDouble(dt.Rows[0]["Price"]),
                 PublishDate = Convert.ToDateTime(dt.Rows[0]["PublishDate"]),
-                WriterId = Convert.ToInt32(dt.Rows[0]["WriterId"])
+                WriterId = Convert.ToInt32(dt.Rows[0]["WriterId"]),
+                IsSelected = Convert.ToBoolean(dt.Rows[0]["IsSelected"]),
+                IsBestSeller = Convert.ToBoolean(dt.Rows[0]["IsBestSeller"])
             };
 
             return book;
@@ -202,7 +208,9 @@ namespace BookStore.Panel.Controllers
                 PublishDate = Convert.ToDateTime(dt.Rows[0]["PublishDate"]),
                 WriterId = Convert.ToInt32(dt.Rows[0]["WriterId"]),
                 CategoryName = dt.Rows[0]["CategoryName"].ToString(),
-                WriterName = dt.Rows[0]["WriterName"].ToString()
+                WriterName = dt.Rows[0]["WriterName"].ToString(),
+                IsSelected = Convert.ToBoolean(dt.Rows[0]["IsSelected"]),
+                IsBestSeller = Convert.ToBoolean(dt.Rows[0]["IsBestSeller"])
             };
 
             return book;
@@ -246,7 +254,7 @@ namespace BookStore.Panel.Controllers
                 }
 
 
-                SqlCommand cmd = new SqlCommand("update dbo.Books set Name=@name, CategoryId=@categoryId, WriterId=@writerId, PageCount=@pageCount, Price=@price, Publishdate=@publishDate, Description=@description, ImageUrl=@imageUrl where Id=@id", connection);
+                SqlCommand cmd = new SqlCommand("update dbo.Books set Name=@name, CategoryId=@categoryId, WriterId=@writerId, PageCount=@pageCount, Price=@price, Publishdate=@publishDate, Description=@description, ImageUrl=@imageUrl, IsSelected=@isSelected, IsBestSeller=@isBestSeller where Id=@id", connection);
                 cmd.Parameters.AddWithValue("id", model.Id);
                 cmd.Parameters.AddWithValue("name", model.Name);
                 cmd.Parameters.AddWithValue("categoryId", model.CategoryId);
@@ -256,6 +264,8 @@ namespace BookStore.Panel.Controllers
                 cmd.Parameters.AddWithValue("publishDate", model.PublishDate);
                 cmd.Parameters.AddWithValue("description", model.Description);
                 cmd.Parameters.AddWithValue("imageUrl", model.ImageUrl);
+                cmd.Parameters.AddWithValue("isSelected", model.IsSelected);
+                cmd.Parameters.AddWithValue("isBestSeller", model.IsBestSeller);
 
                 connection.Open();
                 cmd.ExecuteNonQuery();

@@ -16,6 +16,8 @@
             <th>@Html.DisplayNameFor(model => model.FirstOrDefault().WriterId)</th>
             <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Price)</th>
             <th>@Html.DisplayNameFor(model => model.FirstOrDefault().PageCount)</th>
+            <th>Seçilen</th>
+            <th>Çok Satan</th>
             <th width="120px"></th>
         </tr>
     </thead>
@@ -33,6 +35,26 @@
                 <td>@item.WriterName</td>
                 <td>@item.Price</td>
                 <td>@item.PageCount</td>
+                <td>
+                    @if (item.IsSelected)
+                    {
+                        <span class="badge bg-success">Evet</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Hayır</span>
+                    }
+                </td>
+                <td>
+                    @if (item.IsBestSeller)
+                    {
+                        <span class="badge bg-success">Evet</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Hayır</span>
+                    }
+                </td>
                 <td>
                     <a class="btn btn-sm btn-outline-warning" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a>
                     <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>

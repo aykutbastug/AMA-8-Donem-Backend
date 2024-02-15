@@ -59,5 +59,13 @@ namespace BookStore.Entities
         [DisplayName("Küçük Resim")]
         [MaxLength(250, ErrorMessage = "Küçük Resim alanı maksimum 250 karakter olmalıdır")]
         public string? SmallImageUrl { get; set; }
+
+        [DisplayName("Sizin için seçtiklerimiz listesinde görünsün mü ?")]
+        public bool IsSelected { get; set; }
+
+        [DisplayName("Çok satanlar listesinde görünsün mü ?")]
+        public bool IsBestSeller { get; set; }
+
+
     }
 }
