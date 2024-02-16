@@ -1,0 +1,20 @@
+﻿@model CategoryViewModel
+@{
+    ViewData["Title"] = "Kategori Sayfası";
+}
+
+<h1>@Model.Category.Name kategorisine ait kitaplar</h1>
+<hr />
+<div class="row">
+    @foreach (var book in Model.Books)
+    {
+        <div class="card col-md-3 m-2 text-center" style="width: 18rem;">
+            <img src="https://localhost:7262/uploads/books/@book.ImageUrl" class="card-img-top mx-auto mt-3" alt="..." style="height:350px; width:250px;">
+            <div class="card-body">
+                <h5 class="card-title">@book.Name</h5>
+                <h3 class="card-text text-warning">@book.Price ₺</h3>
+                <a asp-controller="Book" asp-action="Index" asp-route-id="@book.Id" class="btn btn-primary">Detaylı Bilgi</a>
+            </div>
+        </div>
+    }
+</div>

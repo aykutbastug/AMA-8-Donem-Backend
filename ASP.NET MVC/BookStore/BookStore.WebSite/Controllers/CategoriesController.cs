@@ -1,37 +1,31 @@
 ﻿using BookStore.Entities;
-using BookStore.WebSite.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Data;
+using NuGet.Protocol.Plugins;
 using System.Data.SqlClient;
-using System.Diagnostics;
+using System.Data;
+using BookStore.WebSite.Models;
 
 namespace BookStore.WebSite.Controllers
 {
-    public class HomeController : Controller
+    public class CategoriesController : Controller
     {
         SqlConnection connection = new SqlConnection();
 
-        //private readonly IConfiguration configuration;
-        //public HomeController(IConfiguration _configuration)
-        //{
-        //    configuration = _configuration;
-        //}
-
-        public HomeController(IConfiguration configuration)
+        public CategoriesController(IConfiguration configuration)
         {
             connection.ConnectionString = configuration.GetConnectionString("BookStoreContext");
         }
-
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
             ViewBag.Categories = GetCategories();
 
-            HomePageViewModel model = new HomePageViewModel();
-            model.SizinIcinSectiklerimiz = GetBooks(false);
-            model.CokSatanlar = GetBooks(true);
+            CategoryViewModel viewModel = new CategoryViewModel { 
+                Category = GetCategory(id),
+                Books = GetBooks(id)
+            };
 
-            return View(model);
+
+            return View(viewModel);
         }
 
         private List<Category> GetCategories()
@@ -54,13 +48,26 @@ namespace BookStore.WebSite.Controllers
             return categories;
         }
 
-        private List<Book> GetBooks(bool isBestSeller)
+        private Category GetCategory(int categoryId)
         {
-            string sqlCommand = "select top 4 * from dbo.Books where IsSelected=1 order by Name";
-            if (isBestSeller)
-                sqlCommand = "select top 4 * from dbo.Books where IsBestSeller=1 order by Name";
+            SqlDataAdapter da = new SqlDataAdapter("select * from dbo.Categories where Id=@id", connection);
+            da.SelectCommand.Parameters.AddWithValue("id", categoryId);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
-            SqlDataAdapter da = new SqlDataAdapter(sqlCommand, connection);
+            Category category = new Category
+            {
+                Id = Convert.ToInt32(dt.Rows[0]["Id"]),
+                Name = dt.Rows[0]["Name"].ToString()
+            };
+
+            return category;
+        }
+
+        private List<Book> GetBooks(int categoryId)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select * from dbo.Books where CategoryId=@catId", connection);
+            da.SelectCommand.Parameters.AddWithValue("catId", categoryId);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
@@ -87,14 +94,6 @@ namespace BookStore.WebSite.Controllers
             }
 
             return books;
-        }
-
-
-        public IActionResult Book()
-        {
-            ViewBag.Categories = GetCategories();
-
-            return View();
         }
     }
 }
