@@ -1,0 +1,54 @@
+﻿@model BookViewModel
+
+@{
+    ViewData["Title"] = "Book";
+}
+
+<span class="text-dark fs-2">@Model.Book.Name <small class="text-dark fs-6">@Model.Writer.NameSurname</small></span>
+<hr class="text-success" />
+<div class="row">
+    <div class="col-4">
+        <img src="https://localhost:7262/uploads/books/@Model.Book.ImageUrl" alt="" width="350px" />
+    </div>
+    <div class="col-8">
+        <div class="form-group">
+            <span class="text-dark fs-3">@Model.Book.Name</span>
+        </div>
+        <div class="form-group">
+            <span class="text-dark fs-6">@Model.Writer.NameSurname</span> |
+            <span class="text-dark fs-6">@Model.Category.Name</span>
+        </div>
+        <div class="form-group">
+            <del class="text-warning fs-4">100</del>
+            <del class="text-warning fs-6">,00</del>
+            <del class="text-warning fs-4">₺</del>
+        </div>
+        <div class="form-group">
+            <strong class="text-success fs-1">@Model.Book.Price.ToString("n0")</strong>
+            <span class="text-success fs-6">,00</span>
+            <span class="text-success fs-1">₺</span>
+        </div>
+        <div class="form-group mt-5">
+            Açıklama
+            <hr />
+            @Html.Raw(Model.Book.Description)
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <h4>Sizin için seçtiklerimiz</h4>
+    <hr />
+</div>
+<div class="row">
+    @foreach (var book in Model.Books)
+    {
+        <div class="card col-md-3 m-2 text-center" style="width: 18rem;">
+            <img src="https://localhost:7262/uploads/books/@book.ImageUrl" class="card-img-top mx-auto mt-3" alt="..." style="height:350px; width:250px;">
+            <div class="card-body">
+                <h5 class="card-title">@book.Name</h5>
+                <h3 class="card-text text-warning">@book.Price ₺</h3>
+                <a asp-controller="Book" asp-action="Index" asp-route-id="@book.Id" class="btn btn-primary">Detaylı Bilgi</a>
+            </div>
+        </div>
+    }
+</div>
